@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Vistas 1</string>
+
+    <string name="principalTitulo">Registro</string>
+    <string name="principalCajaNombre">Ingrese nombre</string>
+    <string name="principalCajaApellido">Ingrese apellido</string>
+    <string name="principalCajaCorreo">Ingrese correo electrónico</string>
+    <string name="principalCajaUsuario">Ingrese nombre de usuario</string>
+    <string name="principalCajaContrasenia">Ingrese contraseña</string>
+    <string name="principalCajaCI">Ingrese C.I.</string>
+    <string name="principalCajaCelular">Ingrese celular</string>
+    <string name="principalTextoGenero">Género</string>
+    <string name="principalRadioFemenino">Femenino</string>
+    <string name="principalRadioMasculino">Masculino</string>
+    <string name="principalRadioSinEspecificar">Sin especificar</string>
+    <string name="principalCajaObservacion">Ingrese Observación</string>
+    <string name="principalTextoIntereses">Lenguajes de interés</string>
+    <string name="principalBotonCancelar">Cancelar</string>
+    <string name="principalBotonAceptar">Aceptar</string>
+
+</resources>

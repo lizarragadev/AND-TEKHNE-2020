@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimenTitulo">25sp</dimen>
+    <dimen name="dimenSeccion">17sp</dimen>
+    <dimen name="dimenCajaTexto">15sp</dimen>
+    <dimen name="dimenTextoBoton">18sp</dimen>
+</resources>
