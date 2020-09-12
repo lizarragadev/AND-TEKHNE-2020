@@ -6,7 +6,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="15dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -83,7 +84,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -124,11 +126,13 @@
             android:layout_height="wrap_content"
             android:text="@string/principalTextoIntereses"
             android:textStyle="bold"
+            android:layout_marginTop="10dp"
             android:textSize="@dimen/dimenSeccion"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
             <CheckBox
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -198,7 +202,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
