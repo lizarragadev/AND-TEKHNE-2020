@@ -16,7 +16,7 @@
                 android:layout_height="250dp"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                >
+                android:background="@drawable/degradado">
                 <ImageView
                     android:layout_marginTop="20dp"
                     android:layout_width="100dp"
@@ -32,12 +32,16 @@
                     android:textSize="30sp"/>
             </LinearLayout>
 
-
-
-
-
-
-
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="180dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -107,12 +111,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
-
-
-
-
-
-
+            </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
 
@@ -209,7 +208,8 @@
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="COMPARTIR" />
+            android:text="COMPARTIR"
+            android:background="@drawable/boton"/>
 
     </LinearLayout>
 </ScrollView>
