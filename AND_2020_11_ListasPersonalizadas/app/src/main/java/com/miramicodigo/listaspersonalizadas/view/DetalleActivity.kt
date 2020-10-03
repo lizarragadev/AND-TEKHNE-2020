@@ -1,7 +1,8 @@
-package com.miramicodigo.listaspersonalizadas
+package com.miramicodigo.listaspersonalizadas.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.miramicodigo.listaspersonalizadas.R
 
 class DetalleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
