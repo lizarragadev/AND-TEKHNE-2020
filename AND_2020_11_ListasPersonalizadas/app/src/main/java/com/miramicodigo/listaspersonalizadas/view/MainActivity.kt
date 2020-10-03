@@ -1,13 +1,16 @@
 package com.miramicodigo.listaspersonalizadas.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import com.miramicodigo.listaspersonalizadas.R
 import com.miramicodigo.listaspersonalizadas.adapter.CustomAdapter
 import com.miramicodigo.listaspersonalizadas.model.Pokemon
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
     lateinit var datos: ArrayList<Pokemon>
 
@@ -19,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         val adaptador = CustomAdapter(this, datos)
         lvLista.adapter = adaptador
+        lvLista.onItemClickListener = this
     }
 
     private fun llenarPokemones() {
@@ -39,19 +43,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+        val intent = Intent(this, DetalleActivity::class.java)
+        intent.putExtra("poke", datos[p2])
+        startActivity(intent)
+    }
 
 
 }

@@ -1,6 +1,8 @@
 package com.miramicodigo.listaspersonalizadas.model
 
-class Pokemon {
+import java.io.Serializable
+
+class Pokemon : Serializable {
     var titulo = ""
     var subtitulo = ""
     var imagen = 0

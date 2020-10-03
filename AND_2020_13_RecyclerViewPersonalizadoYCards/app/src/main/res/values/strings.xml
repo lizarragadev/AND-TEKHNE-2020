@@ -58,7 +58,7 @@
 
 
     <string name="main_pk1_subtitulo">Poison - Grass</string>
-    <string name="main_pk2_subtitulo">Poison - Grass</string>
+    <string name="main_pk2_subtitulo">Poison - Grass Poison - Grass Poison - Grass</string>
     <string name="main_pk3_subtitulo">Poison - Grass</string>
     <string name="main_pk4_subtitulo">Fire</string>
     <string name="main_pk5_subtitulo">Fire</string>
@@ -66,14 +66,14 @@
     <string name="main_pk7_subtitulo">Water</string>
     <string name="main_pk8_subtitulo">Water</string>
     <string name="main_pk9_subtitulo">Water</string>
-    <string name="main_pk10_subtitulo">Bug</string>
+    <string name="main_pk10_subtitulo">Bug Bug Bug  Bug Bug</string>
     <string name="main_pk11_subtitulo">Bug</string>
     <string name="main_pk12_subtitulo">Flying - Bug</string>
     <string name="main_pk13_subtitulo">Poison - Bug</string>
     <string name="main_pk14_subtitulo">Poison - Bug</string>
     <string name="main_pk15_subtitulo">Posion Bug</string>
     <string name="main_pk16_subtitulo">Flying - Normal</string>
-    <string name="main_pk17_subtitulo">Flying - Normal</string>
+    <string name="main_pk17_subtitulo">Flying - Normal Flying - Normal Flying - Normal Flying - Normal</string>
     <string name="main_pk18_subtitulo">Flying - Normal</string>
     <string name="main_pk19_subtitulo">Normal</string>
     <string name="main_pk20_subtitulo">Normal</string>
@@ -87,7 +87,7 @@
     <string name="main_pk28_subtitulo">Ground</string>
     <string name="main_pk29_subtitulo">Poison</string>
     <string name="main_pk30_subtitulo">Poison</string>
-    <string name="main_pk31_subtitulo">Poison - Ground</string>
+    <string name="main_pk31_subtitulo">Poison - Ground Poison - Ground Poison - Ground Poison - Ground</string>
     <string name="main_pk32_subtitulo">Poison</string>
     <string name="main_pk33_subtitulo">Poison</string>
     <string name="main_pk34_subtitulo">Poison - Ground</string>
