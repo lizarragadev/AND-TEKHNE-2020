@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/panel">
+        <ImageButton
+            android:id="@+id/ibRegistro"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_menu_uno"
+            android:tint="#FFF"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:padding="15dp"
+            android:background="@color/panel"/>
+        <ImageButton
+            android:id="@+id/ibPerfil"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_menu_dos"
+            android:tint="#FFF"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:padding="15dp"
+            android:background="@color/panel"/>
+        <ImageButton
+            android:id="@+id/ibCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_menu_tres"
+            android:tint="#FFF"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:padding="15dp"
+            android:background="@color/panel"/>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/frameContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/menu"/>
+</RelativeLayout>
