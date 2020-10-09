@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Internacionalización</string>
+    <string name="tituloForm">Registro</string>
+    <string name="cajaNombre">Nombres</string>
+    <string name="cajaApellido">Apellidos</string>
+    <string name="cajaCorreo">Correo electrónico</string>
+    <string name="cajaUsuario">Usuario</string>
+    <string name="cajaContrasenia">Contraseña</string>
+    <string name="textoGenero">Género</string>
+    <string name="radioMasculino">Masculino</string>
+    <string name="radioFemenino">Femenino</string>
+    <string name="cajaCI">CI</string>
+    <string name="cajaTelefono">Teléfono</string>
+    <string name="textoHabilidades">Habilidades</string>
+    <string name="textoComentarios">Comentarios</string>
+    <string name="hintIngreseComentarios">Ingrese comentarios</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="aceptar">Aceptar</string>
+</resources>
