@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Multiples Dispositivos</string>
+    <string name="numeroUno">1</string>
+    <string name="numeroDos">2</string>
+    <string name="tituloTelefono">Teléfono</string>
+    <string name="tituloMultiscreen">Multiscreen size</string>
+</resources>
