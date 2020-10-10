@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Internationalisation</string>
+    <string name="tituloForm">Enregistrement</string>
+    <string name="cajaNombre">Noms</string>
+    <string name="cajaApellido">Nom de famille</string>
+    <string name="cajaCorreo">E-mail</string>
+    <string name="cajaUsuario">Utilisateur</string>
+    <string name="cajaContrasenia">Mot de passe</string>
+    <string name="textoGenero">Sexe</string>
+    <string name="radioMasculino">Homme</string>
+    <string name="radioFemenino">Féminin</string>
+    <string name="cajaCI">CI</string>
+    <string name="cajaTelefono">Téléphone</string>
+    <string name="textoHabilidades">Compétences</string>
+    <string name="textoComentarios">Commentaires</string>
+    <string name="hintIngreseComentarios">Entrez des commentaires</string>
+    <string name="cancelar">Annuler</string>
+</resources>

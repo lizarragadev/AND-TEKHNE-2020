@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Internationalization</string>
+    <string name="tituloForm">Register</string>
+    <string name="cajaNombre">Names</string>
+    <string name="cajaApellido">Last names</string>
+    <string name="cajaCorreo">Email</string>
+    <string name="cajaUsuario">User</string>
+    <string name="cajaContrasenia">Password</string>
+    <string name="textoGenero">Gender</string>
+    <string name="radioMasculino">Male</string>
+    <string name="radioFemenino">Female</string>
+    <string name="cajaCI">DNI</string>
+    <string name="cajaTelefono">Phone</string>
+    <string name="textoHabilidades">Skills</string>
+    <string name="textoComentarios">Comments</string>
+    <string name="hintIngreseComentarios">Enter comments</string>
+    <string name="cancelar">Cancel</string>
+    <string name="aceptar">Done</string>
+</resources>
