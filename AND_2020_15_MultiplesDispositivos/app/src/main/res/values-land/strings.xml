@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Multiples Dispositivos</string>
+    <string name="numeroUno">1</string>
+    <string name="numeroDos">2</string>
+    <string name="tituloTelefono">Teléfono landscape</string>
+    <string name="tituloMultiscreen">Multiscreen size landscape</string>
+</resources>

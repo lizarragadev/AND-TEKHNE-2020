@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Multiples Dispositivos</string>
+    <string name="numeroUno">10</string>
+    <string name="numeroDos">20</string>
+    <string name="tituloTelefono">Tableta</string>
+    <string name="tituloMultiscreen">Multiscreen size Tab</string>
+</resources>

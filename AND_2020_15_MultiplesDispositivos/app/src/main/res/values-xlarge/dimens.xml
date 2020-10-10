@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimenSeparacion">15dp</dimen>
+    <dimen name="dimenSizeNumber">150sp</dimen>
+    <dimen name="dimenSizeTextoTelefono">80sp</dimen>
+    <dimen name="dimenSizeTextoMultiscreen">70sp</dimen>
+    <dimen name="dimenAltoImagen">80dp</dimen>
+</resources>

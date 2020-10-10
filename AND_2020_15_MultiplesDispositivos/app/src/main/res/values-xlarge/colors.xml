@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00BCD4</color>
+    <color name="colorPrimaryDark">#0097A7</color>
+    <color name="colorAccent">#009688</color>
+    <color name="colorAccentDark">#01635A</color>
+
+    <color name="colorUno">#009688</color>
+    <color name="colorDos">#2196F3</color>
+    <color name="colorTres">#FFEB3B</color>
+    <color name="colorCuatro">#03A9F4</color>
+    <color name="colorCinco">#FF5722</color>
+
+    <color name="colorTextos">#FFFFFF</color>
+</resources>
