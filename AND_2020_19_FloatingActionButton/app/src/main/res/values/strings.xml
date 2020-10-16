@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">AND_2020_19_FloatingActionButton</string>
+    <string name="app_name">FloatingActionButton</string>
+
+    <string name="numeroUno">1</string>
+    <string name="numeroDos">2</string>
+    <string name="tituloTelefono">Teléfono</string>
+    <string name="tituloMultiscreen">Botón flotante</string>
 </resources>

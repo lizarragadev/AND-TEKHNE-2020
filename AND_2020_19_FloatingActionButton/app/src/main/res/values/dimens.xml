@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="dimenSeparacion">5dp</dimen>
+    <dimen name="dimenSizeNumber">60sp</dimen>
+    <dimen name="dimenSizeTextoTelefono">40sp</dimen>
+    <dimen name="dimenSizeTextoMultiscreen">30sp</dimen>
+    <dimen name="dimenAltoImagen">50dp</dimen>
+</resources>
