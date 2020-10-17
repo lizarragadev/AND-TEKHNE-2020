@@ -10,6 +10,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setSupportActionBar(miToolbar)
+
+        collapsingTL.title = "¡Oh linda La Paz!"
+
+        fabAnd.setOnClickListener {
+            Toast.makeText(this, "Click en FAB", Toast.LENGTH_SHORT).show()
+        }
 
     }
 }
