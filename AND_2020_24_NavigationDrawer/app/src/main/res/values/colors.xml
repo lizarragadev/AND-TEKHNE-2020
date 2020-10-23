@@ -3,4 +3,12 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccentDark">#049E8F</color>
+
+    <color name="panel">#2B2B2B</color>
+
+    <color name="colorNumeros">#1D2221</color>
+    <color name="colorLateral">#104BA7</color>
+    <color name="colorLateralLight">#5C87CC</color>
+    <color name="colorArriba">#2A3131</color>
 </resources>

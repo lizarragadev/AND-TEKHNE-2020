@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">AND_2020_24_NavigationDrawer</string>
+    <string name="app_name">NavigationDrawer</string>
+    <string name="title_activity_main">NavigationDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Gustavo Lizárraga</string>
+    <string name="nav_header_subtitle">lizarraga.dev@gmail.com</string>
 </resources>
