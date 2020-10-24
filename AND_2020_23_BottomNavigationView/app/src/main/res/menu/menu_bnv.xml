@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuRegistro"
+        android:title="Registro"
+        android:icon="@drawable/ic_menu_uno"/>
+    <item
+        android:id="@+id/menuCalculadora"
+        android:title="Calculadora"
+        android:icon="@drawable/ic_menu_dos"/>
+    <item
+        android:id="@+id/menuPerfil"
+        android:title="Perfil"
+        android:icon="@drawable/ic_menu_tres"/>
+</menu>
