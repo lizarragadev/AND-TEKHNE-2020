@@ -2,9 +2,11 @@ package com.miramicodigo.pickers
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.miramicodigo.pickers.view.DatePickDialog
+import com.miramicodigo.pickers.view.TimePickDialog
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() , DateTimeInterface {
+class MainActivity : AppCompatActivity()  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,21 +22,11 @@ class MainActivity : AppCompatActivity() , DateTimeInterface {
     }
 
     private fun showDatePickerDialog() {
-        val dialogFragment = DatePickerDialog()
-        dialogFragment.show(supportFragmentManager, "datePicker")
+
     }
 
     private fun showTimePickerDialog() {
-        val dialogFragment = TimePickerDialog()
-        dialogFragment.show(supportFragmentManager, "timePicker")
-    }
 
-    override fun obtieneFecha(date: String) {
-        etFecha.setText(date)
-    }
-
-    override fun obtieneHora(hour: String) {
-        etHora.setText(hour)
     }
 
 }
