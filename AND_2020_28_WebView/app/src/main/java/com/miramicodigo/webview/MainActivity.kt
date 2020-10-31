@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         webView.settings.javaScriptEnabled = true
         webView.settings.builtInZoomControls = true
         webView.setInitialScale(100)
-        webView.loadUrl("http://$url")
+        webView.loadUrl("https://$url")
     }
 
     fun hideSoftKeyboard() {
