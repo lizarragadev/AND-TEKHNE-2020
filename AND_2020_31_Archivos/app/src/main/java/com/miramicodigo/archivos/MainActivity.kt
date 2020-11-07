@@ -1,6 +1,7 @@
 package com.miramicodigo.archivos
 
 import android.Manifest
+import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -46,9 +47,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     fun guardarInterno() {
         if (etInterno.text.toString() != "") {
             try {
+                lateinit var bufferedWriter: BufferedWriter
+                val fileOutputStream = openFileOutput(nombreArchivoInterno, Context.MODE_APPEND)
+                bufferedWriter = BufferedWriter(OutputStreamWriter(fileOutputStream))
+                bufferedWriter.write(etInterno.text.toString())
+                bufferedWriter.newLine()
+                bufferedWriter.flush()
 
-
-
+                etInterno.setText("")
+                Toast.makeText(applicationContext, "se guardó exitosamente", Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
                 println("Error: " + e.message)
             }
@@ -59,8 +66,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     fun leerInterno() {
         try {
-
-
+            val ruta = this.filesDir
+            val file = File(ruta, nombreArchivoInterno)
+            val bufferedReader = file.bufferedReader()
+            val text = bufferedReader.readLines()
+            var resultado = ""
+            for(line in text) {
+                resultado = resultado + line + "\n"
+            }
+            etInterno.setText(resultado)
 
         } catch (e: Exception) {
             println("Error: " + e.message)
@@ -68,9 +82,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     fun borrarInterno() {
-
-
-
+        val ruta = this.filesDir
+        val file = File(ruta, nombreArchivoInterno)
+        val delete = file.delete()
+        if(delete) {
+            etInterno.setText("")
+            Toast.makeText(this, "Eliminado exitosamente", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "No se pudo eliminar el archivo", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun guardarExterno() {
@@ -92,9 +112,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             if (sdDisponible && sdAccesoEscritura) {
                 try {
-
-
-
+                    //val ruta = Environment.getExternalStorageDirectory()
+                    val ruta = getExternalFilesDir(null)
+                    val dir = File(ruta.toString() + nombreCarpeta)
+                    if (!dir.exists())
+                        dir.mkdirs()
+                    val file = File(dir, nombreArchivoExterno)
+                    val osw = OutputStreamWriter(FileOutputStream(file, true))
+                    osw.append(etExterno.text.toString())
+                    osw.appendLine()
+                    osw.close()
+                    etExterno.setText("")
+                    Toast.makeText(this, "Se guardo exitosamente", Toast.LENGTH_SHORT).show()
                 } catch (ioe: IOException) {
                     Toast.makeText(this, "No se pudo grabar", Toast.LENGTH_SHORT).show()
                 }
@@ -110,18 +139,32 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     fun leerExterno() {
         try {
-
-
-
+            //val ruta = Environment.getExternalStorageDirectory()
+            val ruta = getExternalFilesDir(null)
+            val file = File(ruta, nombreCarpeta + nombreArchivoExterno) // /TEKHNE/prueba_archivo_ext.txt
+            val bufferedReader = file.bufferedReader()
+            val text = bufferedReader.readLines()
+            var resultado = ""
+            for(line in text) {
+                resultado = resultado + line + "\n"
+            }
+            etExterno.setText(resultado)
         } catch (e: Exception) {
             println("Error: " + e.message)
         }
     }
 
     fun borrarExterno() {
-
-
-
+        //val ruta = Environment.getExternalStorageDirectory()
+        val ruta = getExternalFilesDir(null)
+        val file = File(ruta, nombreCarpeta + nombreArchivoExterno)
+        val delete = file.delete()
+        if(delete) {
+            Toast.makeText(this, "Eliminado exitosamente", Toast.LENGTH_SHORT).show()
+            etExterno.setText("")
+        } else {
+            Toast.makeText(this, "No se pudo eliminar", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun verificaPermiso() {
