@@ -172,6 +172,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             if (!Settings.System.canWrite(this)) {
                 requestPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE), 1)
             }
+        } else {
+            guardarExterno()
         }
     }
 
