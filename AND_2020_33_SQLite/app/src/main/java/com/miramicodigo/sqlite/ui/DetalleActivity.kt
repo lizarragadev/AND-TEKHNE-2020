@@ -23,8 +23,26 @@ class DetalleActivity : AppCompatActivity() {
 
         title = "Detalle"
 
+        db = DatabaseAdapter(this)
+        db.abrir()
 
+        id = intent.getIntExtra("id", 0)
+        val cursor = db.obtenerPersona(id)
 
+        if(cursor.moveToFirst()) {
+            tvNombre.text = cursor.getString(1)
+            tvTelefono.text = cursor.getString(2)
+            tvCorreo.text = cursor.getString(3)
+
+            val genero = cursor.getString(4)
+            if(genero == "f") {
+                tvGenero.text = "Fememino"
+                ivImagen.setImageResource(R.drawable.woman)
+            } else {
+                tvGenero.text = "Masculino"
+                ivImagen.setImageResource(R.drawable.man)
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -35,7 +53,10 @@ class DetalleActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_editar -> {
-
+                val intent = Intent(this, FormularioActivity::class.java)
+                intent.putExtra("id", id)
+                startActivity(intent)
+                finish()
             }
             R.id.menu_eliminar -> {
                 confirmaEliminacion().show()
@@ -50,9 +71,9 @@ class DetalleActivity : AppCompatActivity() {
             .setMessage("¿Estás seguro de eliminar la persona?")
             .setCancelable(false)
             .setPositiveButton("Si") { dInt, i ->
-
-
-
+                db.eliminarPersona(id)
+                finish()
+                Toast.makeText(this, "Se borró exitosamente", Toast.LENGTH_SHORT).show()
             }
             .setNeutralButton("Cancelar") { dInt, i ->
             }
@@ -62,8 +83,7 @@ class DetalleActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-
-
+        db.cerrar()
     }
 
 }

@@ -32,18 +32,33 @@ class MainActivity : AppCompatActivity() {
         adaptador = RVAdapter(activity)
         rvData.adapter = adaptador
 
-
-
+        db = DatabaseAdapter(this)
     }
 
     override fun onStart() {
         super.onStart()
-
+        db.abrir()
+        cargarDatosLista()
     }
 
     fun cargarDatosLista() {
-
-
+        datos.clear()
+        val cursor = db.obtenerTodasPersonas()
+        if(cursor.moveToFirst()) {
+            llContent.visibility = View.INVISIBLE
+            do {
+                val persona = Persona()
+                persona.id = cursor.getInt(0)
+                persona.nombre = cursor.getString(1)
+                persona.telefono = cursor.getString(2)
+                persona.correo = cursor.getString(3)
+                persona.genero = cursor.getString(4)
+                datos.add(persona)
+            } while (cursor.moveToNext())
+        } else{
+            llContent.visibility = View.VISIBLE
+        }
+        adaptador.addPersonas(datos)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -54,8 +69,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_adicionar -> {
-
-
+                startActivity(Intent(this, FormularioActivity::class.java))
             }
         }
         return super.onOptionsItemSelected(item)
@@ -63,7 +77,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-
+        db.cerrar()
     }
 
 }

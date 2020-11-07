@@ -30,8 +30,12 @@ class RVAdapter(activity: Activity) : RecyclerView.Adapter<RVAdapter.ViewHolder>
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val persona = items[position]
-
-
+        holder.tvPrincipalItem.text = persona.nombre
+        holder.tvSecundarioItem.text = persona.correo
+        if(persona.genero == "f")
+            holder.ivImageItem.setImageResource(R.drawable.woman)
+        else
+            holder.ivImageItem.setImageResource(R.drawable.man)
     }
 
     override fun getItemCount(): Int {
@@ -54,7 +58,11 @@ class RVAdapter(activity: Activity) : RecyclerView.Adapter<RVAdapter.ViewHolder>
             tvPrincipalItem = itemView.findViewById(R.id.tvPrincipalItem) as TextView
             tvSecundarioItem = itemView.findViewById(R.id.tvSecundarioItem) as TextView
 
-
+            itemView.setOnClickListener {
+                val intent = Intent(context, DetalleActivity::class.java)
+                intent.putExtra("id", items[adapterPosition].id)
+                context.startActivity(intent)
+            }
         }
 
     }
