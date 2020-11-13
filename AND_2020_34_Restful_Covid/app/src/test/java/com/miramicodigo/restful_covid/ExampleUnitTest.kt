@@ -1,4 +1,4 @@
-package com.miramicodigo.restful1
+package com.miramicodigo.restful_covid
 
 import org.junit.Test
 

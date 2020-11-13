@@ -1,4 +1,4 @@
-package com.miramicodigo.restful1
+package com.miramicodigo.restful_covid
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.miramicodigo.restful1", appContext.packageName)
+        assertEquals("com.miramicodigo.restful_covid", appContext.packageName)
     }
 }
