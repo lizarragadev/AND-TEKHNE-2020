@@ -1,9 +1,10 @@
 package com.miramicodigo.restful_covid.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 import java.util.*
 
-class Country {
+class Country : Serializable {
     @SerializedName("Country")
     var country = ""
     @SerializedName("CountryCode")

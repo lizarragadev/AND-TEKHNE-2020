@@ -13,6 +13,20 @@ class CountryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country)
 
+        supportActionBar?.hide()
+
+        val country = intent.getSerializableExtra("country") as Country
+
+        tvDetallePais.text = country.country
+        val formatDate = SimpleDateFormat("dd/MM/yyyy hh:mm ZZ", Locale.getDefault())
+        tvDetalleFechaActualizacion.text = formatDate.format(country.date)
+
+        tvDetalleHoyConfirmados.text = country.newConfirmed.toString()
+        tvDetalleHoyRecuperados.text = country.newRecovered.toString()
+        tvDetalleHoyDecesos.text = country.newDeaths.toString()
+        tvDetalleTotalConfirmados.text = country.totalConfirmed.toString()
+        tvDetalleTotalRecuperados.text = country.totalRecovered.toString()
+        tvDetalleTotalDecesos.text = country.totalDeaths.toString()
 
     }
 }

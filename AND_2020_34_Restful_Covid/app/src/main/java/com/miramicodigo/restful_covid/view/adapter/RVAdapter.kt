@@ -38,5 +38,13 @@ class RVAdapter(private val context: Context, val data: ArrayList<Country>) : Re
         val totalCasosTextView: TextView = itemView.findViewById(R.id.tvCasosConfirmados)
         val totalCasosHoyTextView: TextView = itemView.findViewById(R.id.tvCasosConfirmadosHOY)
 
+        init {
+            itemView.setOnClickListener {
+                val intent = Intent(context, CountryActivity::class.java)
+                intent.putExtra("country", dataset[adapterPosition])
+                context.startActivity(intent)
+            }
+        }
+
     }
 }
