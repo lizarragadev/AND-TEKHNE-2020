@@ -22,8 +22,11 @@ class RVAdapter(private val context: Context, val data: ArrayList<Country>) : Re
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val country = dataset[position]
 
-
+        holder.paisTextView.text = country.country
+        holder.totalCasosTextView.text = country.totalConfirmed.toString()
+        holder.totalCasosHoyTextView.text = country.newConfirmed.toString()
     }
 
     override fun getItemCount(): Int {
