@@ -1,6 +1,7 @@
 package com.miramicodigo.restful_poke.view.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Typeface
 import android.widget.TextView
 import android.view.LayoutInflater
@@ -8,8 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.miramicodigo.restful_poke.R
 import com.miramicodigo.restful_poke.model.Pokemon
+import com.miramicodigo.restful_poke.view.DetalleActivity
 
 class PokemonAdapter(private val context: Context) : RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
 
@@ -26,6 +30,15 @@ class PokemonAdapter(private val context: Context) : RecyclerView.Adapter<Pokemo
         val fontBold = Typeface.createFromAsset(context.assets, "product_sans_bold.ttf")
         holder.nombreTextView.typeface = fontBold
 
+        holder.nombreTextView.text = p.name
+
+        val requestOption = RequestOptions()
+                .placeholder(R.drawable.pokeball).centerCrop()
+
+        Glide.with(context)
+                .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${p.number}.png")
+                .apply(requestOption)
+                .into(holder.fotoImageView)
 
     }
 
@@ -44,7 +57,9 @@ class PokemonAdapter(private val context: Context) : RecyclerView.Adapter<Pokemo
 
         init {
             itemView.setOnClickListener {
-
+                val intent = Intent(context, DetalleActivity::class.java)
+                intent.putExtra("poke", dataset[adapterPosition])
+                context.startActivity(intent)
             }
         }
     }
