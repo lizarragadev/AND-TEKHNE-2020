@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/botonFino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="usarProveedorFino"
+        android:text="Usar proveedor fino"
+        android:background="@drawable/degradado_celeste"
+        android:layout_margin="3dp"/>
+
+    <Button
+        android:id="@+id/botonAmbos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/degradado_celeste"
+        android:onClick="usarAmbosProveedores"
+        android:text="Usar ambos proveedores" />
+
+    <TextView
+        android:id="@+id/textoTituloLatitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitud"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textoLatitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textoTituloLongitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitud"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textoLongitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textoTituloDireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Direccion"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textoDireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:text="BOTON"/>
+</LinearLayout>
