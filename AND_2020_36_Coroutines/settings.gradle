@@ -1,2 +1,0 @@
-include ':app'
-rootProject.name = "AND_2020_36_Coroutines"
