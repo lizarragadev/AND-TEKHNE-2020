@@ -28,6 +28,11 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
+        responsePersonaLogin = SessionPrefs(this).get(this).getPersona()
+        tvUsuario.text = responsePersonaLogin.id
+        tvNombre.text = responsePersonaLogin.name
+        tvDireccion.text = responsePersonaLogin.address
+        tvGenero.text = if(responsePersonaLogin.gender == "M") "Masculino" else "Fememnino"
 
     }
 
@@ -50,9 +55,10 @@ class MainActivity : AppCompatActivity() {
                 .setMessage("¿Estás seguro que deseas cerrar sesión?")
                 .setCancelable(false)
                 .setPositiveButton("Si") { dInt, i ->
-
-
-
+                    SessionPrefs(this).get(this).cerrarSesion()
+                    finish()
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    Toast.makeText(this, "Se cerró la sesión exitosamente", Toast.LENGTH_SHORT).show()
                 }
                 .setNeutralButton("Cancelar") { dInt, i ->
                 }

@@ -48,6 +48,9 @@ class LoginActivity : AppCompatActivity() {
                 abrirConfig()
         }
 
+        tvRegistrarse.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
 
     }
 

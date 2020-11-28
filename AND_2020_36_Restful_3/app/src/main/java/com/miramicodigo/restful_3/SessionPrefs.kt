@@ -48,14 +48,23 @@ class SessionPrefs constructor(context: Context) {
     }
 
     fun cerrarSesion(){
-
-
-
+        mIsLoggedIn = false
+        val editor = mPrefs.edit()
+        editor.putString(PREFERENCES_PERSONA_ID, null)
+        editor.putString(PREFERENCES_PERSONA_NAME, null)
+        editor.putString(PREFERENCES_PERSONA_ADDRESS, null)
+        editor.putString(PREFERENCES_PERSONA_GENDER, null)
+        editor.putString(PREFERENCES_PERSONA_TOKEN, null)
+        editor.apply()
     }
 
     fun getPersona() : ResponsePersonaLogin {
+        val id = mPrefs.getString(PREFERENCES_PERSONA_ID, "")
+        val name = mPrefs.getString(PREFERENCES_PERSONA_NAME, "")
+        val address = mPrefs.getString(PREFERENCES_PERSONA_ADDRESS, "")
+        val gender = mPrefs.getString(PREFERENCES_PERSONA_GENDER, "")
+        val token = mPrefs.getString(PREFERENCES_PERSONA_TOKEN, "")
 
-
-        return null!!
+        return ResponsePersonaLogin(id, name, address, gender, token)
     }
 }

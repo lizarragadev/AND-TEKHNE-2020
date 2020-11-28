@@ -6,6 +6,7 @@ import android.net.ConnectivityManager
 import android.os.Bundle
 import android.provider.Settings
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -117,15 +118,21 @@ class RegisterActivity : AppCompatActivity() {
                     if(response.isSuccessful) {
                         val persona = response.body() as ResponseStatusRegister
                         if(persona.status == 201) {
+                            Toast.makeText(applicationContext, "Se registró al usuario exitosamente", Toast.LENGTH_SHORT).show()
                             irPantallaLogin()
                         } else {
+                            Log.i("RegisterActivity", ">>>>>>>>> False response")
+                            Toast.makeText(applicationContext, "Ya existe el usuario", Toast.LENGTH_SHORT).show()
                             persona.message?.let { mostrarErrorLogueo(it) }
                         }
+                    } else {
+                        Toast.makeText(applicationContext, "Ya existe el usuario, intente con otro nombre de usuario", Toast.LENGTH_SHORT).show()
                     }
                 }
 
                 override fun onFailure(call: Call<ResponseStatusRegister>, t: Throwable) {
                     mostrarProgreso(false)
+                    Log.i("RegisterActivity", ">>>>>>>>> On failure")
                     t.message?.let { mostrarErrorLogueo(it) }
                 }
 
