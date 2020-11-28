@@ -10,9 +10,15 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.miramicodigo.restful_3.R
+import com.miramicodigo.restful_3.model.RegisterBody
+import com.miramicodigo.restful_3.model.ResponseStatusRegister
 import com.miramicodigo.restful_3.service.PersonaService
 import kotlinx.android.synthetic.main.activity_register.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 @Suppress("DEPRECATION")
 class RegisterActivity : AppCompatActivity() {
@@ -24,7 +30,19 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        retrofit = Retrofit.Builder()
+                .baseUrl(PersonaService.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
 
+        personaService = retrofit.create(PersonaService::class.java)
+
+        btnRegister.setOnClickListener {
+            if(hayInternet())
+                register()
+            else
+                abrirConfig()
+        }
 
     }
 
@@ -91,10 +109,27 @@ class RegisterActivity : AppCompatActivity() {
         if (cancel) {
             focusView.requestFocus()
         } else {
+            mostrarProgreso(true)
+            val registerCall = personaService.register(RegisterBody(user, password, name, address, if(male) "M" else "F"))
+            registerCall.enqueue(object: Callback<ResponseStatusRegister> {
+                override fun onResponse(call: Call<ResponseStatusRegister>, response: Response<ResponseStatusRegister>) {
+                    mostrarProgreso(false)
+                    if(response.isSuccessful) {
+                        val persona = response.body() as ResponseStatusRegister
+                        if(persona.status == 201) {
+                            irPantallaLogin()
+                        } else {
+                            persona.message?.let { mostrarErrorLogueo(it) }
+                        }
+                    }
+                }
 
+                override fun onFailure(call: Call<ResponseStatusRegister>, t: Throwable) {
+                    mostrarProgreso(false)
+                    t.message?.let { mostrarErrorLogueo(it) }
+                }
 
-
-
+            })
         }
     }
 

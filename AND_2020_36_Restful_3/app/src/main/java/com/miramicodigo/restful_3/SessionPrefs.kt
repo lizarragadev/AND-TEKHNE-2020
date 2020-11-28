@@ -35,8 +35,16 @@ class SessionPrefs constructor(context: Context) {
     }
 
     fun guardarUsuario(responsePersonaLogin: ResponsePersonaLogin) {
-
-
+        if(responsePersonaLogin != null) {
+            val editor = mPrefs.edit()
+            editor.putString(PREFERENCES_PERSONA_ID, responsePersonaLogin.id)
+            editor.putString(PREFERENCES_PERSONA_NAME, responsePersonaLogin.name)
+            editor.putString(PREFERENCES_PERSONA_ADDRESS, responsePersonaLogin.address)
+            editor.putString(PREFERENCES_PERSONA_GENDER, responsePersonaLogin.gender)
+            editor.putString(PREFERENCES_PERSONA_TOKEN, responsePersonaLogin.token)
+            editor.apply()
+            mIsLoggedIn = true
+        }
     }
 
     fun cerrarSesion(){

@@ -34,6 +34,20 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        retrofit = Retrofit.Builder()
+                .baseUrl(PersonaService.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+
+        personaService = retrofit.create(PersonaService::class.java)
+
+        btnLogIn.setOnClickListener {
+            if(hayInternet())
+                login()
+            else
+                abrirConfig()
+        }
+
 
     }
 
@@ -69,9 +83,23 @@ class LoginActivity : AppCompatActivity() {
         if (cancel) {
             focusView.requestFocus()
         } else {
+            mostrarProgreso(true)
+            val loginCall = personaService.login(LoginBody(user, password))
 
+            loginCall.enqueue(object: Callback<ResponsePersonaLogin> {
+                override fun onFailure(call: Call<ResponsePersonaLogin>, t: Throwable) {
+                    mostrarProgreso(false)
+                }
 
-
+                override fun onResponse(call: Call<ResponsePersonaLogin>, response: Response<ResponsePersonaLogin>) {
+                    mostrarProgreso(false)
+                    if (response.isSuccessful) {
+                        val persona = response.body() as ResponsePersonaLogin
+                        SessionPrefs(this@LoginActivity).get(this@LoginActivity).guardarUsuario(persona)
+                        irPantallaLogueado(persona)
+                    }
+                }
+            })
 
         }
     }
