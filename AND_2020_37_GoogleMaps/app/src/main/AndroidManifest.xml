@@ -24,7 +24,17 @@
         <activity android:name=".ui.PolygonsActivity"/>
         <activity android:name=".ui.PolylinesActivity"/>
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAj5O2CMOLyJYfOb-fZKULnVKI9jzzMNr8"/>
 
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false"/>
+
+        <uses-library
+            android:name="com.google.android.maps"
+            android:required="true"/>
 
     </application>
 
