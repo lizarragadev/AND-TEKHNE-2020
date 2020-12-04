@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "AND_2020_38_GoogleMaps"
+rootProject.name = "AND_2020_37_GoogleMaps"
