@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Directions</string>
+    <string name="api_key">INGRESE SU API KEY AQUI</string>
+</resources>
