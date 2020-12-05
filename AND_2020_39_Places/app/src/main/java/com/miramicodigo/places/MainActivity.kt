@@ -31,8 +31,20 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val apiKey = getString(R.string.api_key)
+        if(apiKey.isEmpty()) {
+            panelData.visibility = View.INVISIBLE
+            panelTemp.visibility = View.VISIBLE
+            tvError.text = getString(R.string.error)
+            return
+        }
 
+        if(!Places.isInitialized()) {
+            Places.initialize(this, apiKey)
+        }
 
+        placesClient = Places.createClient(this)
+        initAutoCompleteTextView()
     }
 
     private fun initAutoCompleteTextView() {
@@ -50,8 +62,17 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             var placeID: String? = null
             placeID = item.placeId
 
-
-
+            val placeFields = listOf(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS, Place.Field.LAT_LNG,
+                    Place.Field.PHONE_NUMBER, Place.Field.WEBSITE_URI, Place.Field.RATING)
+            val request: FetchPlaceRequest
+            request = FetchPlaceRequest.builder(placeID, placeFields).build()
+            placesClient?.fetchPlace(request)?.addOnSuccessListener { task ->
+                showDataFromPlaces(task)
+            }?.addOnFailureListener { e ->
+                panelTemp.visibility = View.VISIBLE
+                panelData.visibility = View.INVISIBLE
+                tvError.text = e.message
+            }
 
         } catch (e: Exception) {
             e.printStackTrace()
@@ -59,14 +80,45 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun showDataFromPlaces(task: FetchPlaceResponse) {
+        panelData.visibility = View.VISIBLE
+        panelTemp.visibility = View.INVISIBLE
+        tvNombre.text = if(task.place.name != null) task.place.name else ""
+        tvDireccion.text = if(task.place.address != null) task.place.address else ""
+        tvTelefono.text = if(task.place.phoneNumber != null) task.place.phoneNumber else ""
+        tvPaginaWeb.text = if(task.place.websiteUri != null) task.place.websiteUri.toString() else ""
+        tvCoordenadas.text = if(task.place.latLng != null) task.place.latLng.toString() else ""
 
+        rbValoracion.isEnabled = false
+        rbValoracion.max = 5
+        rbValoracion.stepSize = 0.01f
+        rbValoracion.invalidate()
+        if(task.place.rating != null)
+            rbValoracion.rating = task.place.rating?.toFloat() ?: 0f
+        else
+            rbValoracion.rating = 0f
+
+        val mapFrag = supportFragmentManager.findFragmentById(R.id.mapFragment) as SupportMapFragment
+        mapFrag.getMapAsync(this)
+
+        latLng = task.place.latLng ?: null!!
+        namePlace = task.place.name.toString()
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
         val cenZoom = CameraUpdateFactory.newLatLngZoom(latLng, 17f)
         googleMap.moveCamera(cenZoom)
 
+        val mark = MarkerOptions()
+                .position(latLng)
+                .title(namePlace)
 
+        googleMap.addMarker(mark)
+
+        googleMap.uiSettings.isZoomGesturesEnabled = false
+        googleMap.uiSettings.isTiltGesturesEnabled = false
+        googleMap.uiSettings.isScrollGesturesEnabled = false
+        googleMap.uiSettings.isZoomControlsEnabled = true
+        googleMap.uiSettings.isRotateGesturesEnabled = false
     }
 
     fun hideSoftKeyboard() {

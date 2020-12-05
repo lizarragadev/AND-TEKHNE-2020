@@ -85,11 +85,11 @@ class AutocompleteAdapter internal constructor(context: Context?, placesClient: 
     }
 
     private fun getAutocomplete(constraint: CharSequence): List<AutocompletePrediction?>? {
-        //val bounds: RectangularBounds = RectangularBounds.newInstance(LatLng(-16.545617, -68.195454), LatLng(-16.469245, -68.090869))
+        val bounds: RectangularBounds = RectangularBounds.newInstance(LatLng(-16.545617, -68.195454), LatLng(-16.469245, -68.090869))
         val requestBuilder: FindAutocompletePredictionsRequest.Builder = FindAutocompletePredictionsRequest.builder()
                 .setQuery(constraint.toString())
-                //.setCountry("BO")
-                //.setLocationBias(bounds)
+                .setCountry("BO")
+                .setLocationBias(bounds)
                 //.setTypeFilter(TypeFilter.ADDRESS)
                 .setSessionToken(AutocompleteSessionToken.newInstance())
 
