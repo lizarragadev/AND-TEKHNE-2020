@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Animaciones</string>
+    <string name="zoomin">ZoomIn</string>
+    <string name="zoomout">ZoomOut</string>
+    <string name="fadein">FadeIn</string>
+    <string name="fadeout">FadeOut</string>
+    <string name="rotate">Rotate</string>
+    <string name="move">Move</string>
+    <string name="slideup">SlideUp</string>
+    <string name="slidedown">SlideDown</string>
+    <string name="blink">Blink</string>
+    <string name="bounce">Bounce</string>
+    <string name="crossfade">Cross Fade</string>
+    <string name="sequential">Sequential</string>
+    <string name="together">Together Animation</string>
+    <string name="stop"><u>Stop</u></string>
+</resources>
