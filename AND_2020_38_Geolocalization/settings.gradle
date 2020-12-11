@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "AND_2020_39_Geolocalization"
+rootProject.name = "AND_2020_38_Geolocalization"

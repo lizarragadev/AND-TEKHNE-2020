@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Geolocalization</string>
 
+    <string name="api_key">INGRESE SU API KEY AQUI</string>
+
     <string name="direccion">Dirección</string>
     <string name="habilitar_gps">Habilitar GPS</string>
     <string name="desea_habilitar_gps">El GPS no es soportado. ¿Desea habilitarlo?</string>
