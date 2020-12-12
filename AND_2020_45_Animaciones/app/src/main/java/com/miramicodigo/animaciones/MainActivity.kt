@@ -31,11 +31,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun zoomin() {
-
+        animacion = AnimationUtils.loadAnimation(this, R.anim.zoom_in)
+        ivOctocat.startAnimation(animacion)
     }
 
     fun zoomout() {
-
+        animacion = AnimationUtils.loadAnimation(this, R.anim.zoom_out)
+        ivOctocat.startAnimation(animacion)
     }
 
     fun fadein() {
@@ -79,7 +81,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun crossfade() {
-
+        animacion = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+        val animacion2 = AnimationUtils.loadAnimation(this, R.anim.fade_out)
+        ivOctocat.startAnimation(animacion2)
+        ivOctocat2.startAnimation(animacion)
     }
 
     fun sequential() {
@@ -93,6 +98,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun stop() {
-
+        ivOctocat2.clearAnimation()
+        ivOctocat.clearAnimation()
     }
 }
