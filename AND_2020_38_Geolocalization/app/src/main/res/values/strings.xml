@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Geolocalization</string>
 
-    <string name="api_key">INGRESE SU API KEY AQUI</string>
+    <string name="api_key">AIzaSyAkL722Ff6jmdN5wAnRO1TdbGPYSpFttfc</string>
 
     <string name="direccion">Dirección</string>
     <string name="habilitar_gps">Habilitar GPS</string>
