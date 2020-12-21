@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contactos"
+        android:textSize="25sp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/tvDetailNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"/>
+    <TextView
+        android:id="@+id/tvDetailEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"/>
+    <TextView
+        android:id="@+id/tvDetailTelefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Teléfono"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"/>
+
+</LinearLayout>
