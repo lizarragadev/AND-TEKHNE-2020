@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "972127492882",
+    "project_id": "tekhnefirebase",
+    "storage_bucket": "tekhnefirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972127492882:android:c203cd55a6f29017fdb1cb",
+        "android_client_info": {
+          "package_name": "com.miramicodigo.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972127492882-up04dgse18r4a2fu9u46iq80dk7pc17j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.miramicodigo.firebase",
+            "certificate_hash": "309593d266ab8604f063e46f4dacdc03e8747bf7"
+          }
+        },
+        {
+          "client_id": "972127492882-3f3gdgdfc4sp7llgrubq0hp2dpn5iha7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiVY1d6_eiltpRN2a0e6MsTV_HfrDB-wc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972127492882-3f3gdgdfc4sp7llgrubq0hp2dpn5iha7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
