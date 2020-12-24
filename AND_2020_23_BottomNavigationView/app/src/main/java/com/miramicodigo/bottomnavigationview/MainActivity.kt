@@ -18,15 +18,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if(savedInstanceState != null) {
-            registroFragment = supportFragmentManager.getFragment(savedInstanceState, "registroFragment") as RegistroFragment
-            perfilFragment = supportFragmentManager.getFragment(savedInstanceState, "perfilFragment") as PerfilFragment
-            calculadoraFragment = supportFragmentManager.getFragment(savedInstanceState, "calculadoraFragment") as CalculadoraFragment
-        } else {
-            registroFragment = RegistroFragment()
-            perfilFragment = PerfilFragment()
-            calculadoraFragment = CalculadoraFragment()
-        }
+        registroFragment = RegistroFragment()
+        perfilFragment = PerfilFragment()
+        calculadoraFragment = CalculadoraFragment()
 
         showFragment(registroFragment)
 
@@ -47,10 +41,4 @@ class MainActivity : AppCompatActivity() {
         trans.replace(R.id.frameContent, frag).commit()
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        supportFragmentManager.putFragment(outState, "registroFragment", registroFragment)
-        supportFragmentManager.putFragment(outState, "perfilFragment", perfilFragment)
-        supportFragmentManager.putFragment(outState, "calculadoraFragment", calculadoraFragment)
-    }
 }
